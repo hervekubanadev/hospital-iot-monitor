@@ -33,3 +33,17 @@ water_audit() {
             printf "No ICU water records found\n"
     }' active_logs/water_usage.log
 }
+process_vitals
+
+
+water_audit
+
+echo "============================================"
+
+echo "Hospital analysis completed successfully."
+
+echo "Report generated: reports/critical_alerts.txt"
+
+echo "These tasks were execution time: $(date)"
+
+echo "============================================"
