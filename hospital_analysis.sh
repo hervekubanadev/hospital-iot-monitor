@@ -3,6 +3,7 @@
 process_vitals() {
 
     echo "Generating critical alerts report..."
+    echo "------------------------------------"
 
     mkdir -p reports
 
@@ -14,5 +15,5 @@ process_vitals() {
     awk -F',' '{print $1","$2","$3}' \
     >> reports/critical_alerts.txt
 
-    echo "Critical alerts saved to reports/critical_alerts.txt"
+    echo "Critical alerts were properly saved to reports/critical_alerts.txt"
 }
