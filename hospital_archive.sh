@@ -13,4 +13,6 @@ for log_file in active_logs/*.log; do
    touch "active_logs/$filename"
    echo "Recreated empty $filename in active_logs/"
 
+done
 
+echo "Log rotation complete - $(date)"
