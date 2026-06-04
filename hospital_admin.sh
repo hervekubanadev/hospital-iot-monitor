@@ -45,3 +45,15 @@ secure_data() {
     echo "Current permissions:"
     ls -ld active_logs
 }
+
+
+initialize_system
+
+secure_data
+
+
+echo ""
+
+echo "System Environment Secured"
+
+date
