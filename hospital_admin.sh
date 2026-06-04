@@ -1,6 +1,8 @@
 #!/bin/bash
 
+# Member 1: The Architect
 initialize_system(){
+
      i="active_logs"
      a="archived_logs"
      r="reports"
@@ -10,8 +12,7 @@ initialize_system(){
        echo "file $i does exist"
   else
     echo "file doesn't exist; creating active_logs directory"
-    echo $(mkdir $i)
-
+    mkdir "$i"
  fi
 
   if [ -d "$a" ];
@@ -19,16 +20,28 @@ initialize_system(){
        echo "file $a does exist"
   else
    echo "file doesn't exist; creating archived_logs directory"
-    echo $(mkdir $a)
-
+    mkdir "$a"
  fi
 
   if [ -d "$r" ];
      then
        echo "file $r does exist"
   else
-    echo "file doesn't creating reports directory"
-    echo $(mkdir $r)
-
+    echo "file doesn't exist; creating reports directory"
+    mkdir "$r"
  fi
+}
+secure_data() {
+
+    echo "============================================"
+    echo "  Securing active_logs directory..."
+    echo "============================================"
+
+    chmod 700 active_logs
+
+    echo "Permissions applied: Owner-only access."
+
+    echo ""
+    echo "Current permissions:"
+    ls -ld active_logs
 }
