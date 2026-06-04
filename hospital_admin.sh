@@ -50,3 +50,8 @@ secure_data() {
 initialize_system
 
 secure_data
+
+
+echo ""
+
+echo "System Environment Secured"
