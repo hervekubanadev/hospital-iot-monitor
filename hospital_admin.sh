@@ -12,39 +12,34 @@ initialize_system(){
        echo "file $i does exist"
   else
     echo "file $i doesn't exist; creating active_logs directory"
-    echo $(mkdir $i)
-    echo $(sleep 2)
+    mkdir "$i"
+    sleep 2
     echo "the file $i has been created"
 
  fi
-
- echo $(sleep 2)
-
+ sleep 2
   if [ -d "$a" ];
      then
        echo "file $a does exist"
   else
    echo "file $a doesn't exist; creating archived_logs directory"
-    echo $(mkdir $a)
-      echo $(sleep 2)
+    mkdir "$a"
+      sleep 2
     echo "the file $a has been created"
-
  fi
- echo $(sleep 2)
+ sleep 2
 
   if [ -d "$r" ];
      then
        echo "file $r does exist"
   else
     echo "file $r doesn't creating reports directory"
-    echo $(mkdir $r)
-      echo $(sleep 2)
+    mkdir "$r"
+      sleep 2
     echo "the file $r has been created"
-
-
  fi
- echo $(sleep 2)
- echo "$(ls -ld */)"
+ sleep 2
+ ls -ld archived_logs archived_logs reports
 }
 secure_data() {
 
@@ -52,7 +47,7 @@ secure_data() {
     echo "  Securing active_logs directory..."
     echo "============================================"
 
-    chmod 700 active_logs
+    chmod 600 active_logs
 
     echo "Permissions applied: Owner-only access."
 
