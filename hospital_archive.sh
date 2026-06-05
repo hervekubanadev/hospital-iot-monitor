@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Starting log archiving process..."
 
 TIMESTAMP=$(date + "%Y%m%d_%H%M")
