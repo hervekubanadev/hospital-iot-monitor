@@ -6,6 +6,9 @@ process_vitals() {
     echo "------------------------------------"
 
     mkdir -p reports
+    timestamp=$1
+    device-id=$2
+    value=$3
 
     grep "CRITICAL" active_logs/heart_rate.log | \
     awk -F',' '{print $1","$2","$3}' \
