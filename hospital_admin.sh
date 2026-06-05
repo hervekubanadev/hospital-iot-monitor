@@ -52,7 +52,7 @@ secure_data() {
     echo "  Securing active_logs directory..."
     echo "============================================"
 
-    chmod 700 active_logs
+    echo $(chmod 600 active_logs)
 
     echo "Permissions applied: Owner-only access."
 
