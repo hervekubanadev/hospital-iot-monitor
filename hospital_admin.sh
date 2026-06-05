@@ -1,6 +1,8 @@
 #!/bin/bash
 
+# Member 1: The Architect
 initialize_system(){
+
      i="active_logs"
      a="archived_logs"
      r="reports"
@@ -44,3 +46,29 @@ initialize_system(){
  echo $(sleep 2)
  echo "$(ls -ld */)"
 }
+secure_data() {
+
+    echo "============================================"
+    echo "  Securing active_logs directory..."
+    echo "============================================"
+
+    chmod 700 active_logs
+
+    echo "Permissions applied: Owner-only access."
+
+    echo ""
+    echo "Current permissions:"
+    ls -ld active_logs
+}
+
+
+initialize_system
+
+secure_data
+
+
+echo ""
+
+echo "System Environment Secured"
+
+date
