@@ -39,7 +39,7 @@ initialize_system(){
     echo "the file $r has been created"
  fi
  sleep 2
- ls -ld archived_logs archived_logs reports
+ ls -ld active_logs archived_logs reports
 }
 secure_data() {
 
