@@ -24,14 +24,15 @@ water_audit() {
 
     echo "Water Usage Audit"
 
-    awk -F',' '
+    awk -F'|' '
     /ICU_WATER_RESERVE/ {
+        gsub(/^[ \t]+|[ \t]+$/, "", $3)
         sum += $3
         count++
     }
     END {
         if (count > 0)
-            printf "Average ICU Water Usage: %.2f\n", sum/count
+            printf "Average ICU Water Usage: %.2f L/min\n", sum/count
         else
             printf "No ICU water records found\n"
     }' active_logs/water_usage_log.log
